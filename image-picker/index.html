@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Picker</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .container {
+            display: flex;
+            margin: 50px 350px;
+            width: 500px;
+            height: 300px;
+        }
+
+        .box {
+            display: flex;
+            justify-content: center;
+            width: 500px;
+            height: 300px;
+        }
+    </style>
+
+    <script>
+        function dekor1() {
+            dekor_1 = document.getElementById("home");
+            dekor_1.style.color = "darkgray";
+        }
+
+        function dekor2() {
+            dekor_2 = document.getElementById("home");
+            dekor_2.style.color = "black";
+        }
+        
+        function imagepicker() {
+            const list_image = ["kera.jpeg", "burung.jpg", "kucing.jpg", "kanguru.jpg", "zebra.jpeg", "meerkat.jpg"]
+            let pilihan = document.getElementById("option");
+            if(pilihan.value == "kera") {
+                let select = list_image[0];
+                document.getElementById("image").src = `images/${select}`
+                alert("Ini gambar kera.jpeg")
+            }
+            
+
+            if(pilihan.value == "burung") {
+                let select = list_image[1];
+                document.getElementById("image").src = `images/${select}`
+                alert("Ini gambar burung.jpg")
+            }
+
+            if(pilihan.value == "kucing") {
+                let select = list_image[2];
+                document.getElementById("image").src = `images/${select}`
+                alert("Ini gambar kucing.png")
+            }
+
+            if(pilihan.value == "kanguru") {
+                let select = list_image[3];
+                document.getElementById("image").src = `images/${select}`
+                alert("Ini gambar kanguru.png")
+            }
+
+            if(pilihan.value == "zebra") {
+                let select = list_image[4];
+                document.getElementById("image").src = `images/${select}`
+                alert("Ini gambar zebra.jpeg")
+            }
+
+            if(pilihan.value == "meerkat") {
+                let select = list_image[5];
+                document.getElementById("image").src = `images/${select}`
+                alert("Ini gambar meerkat.jpg")
+            }
+            
+            
+        }
+    </script>
+</head>
+<body>
+    <a href="" onmouseover="dekor1()" onmouseout="dekor2()" id="home"><h1>Welcome to Wardah MJ's Image Picker</h1></a>
+    <hr>
+    <br>
+    <select id="option" onchange="imagepicker()">
+        <option value="" selected>Pilih Gambar</option>
+        <option value="kera">Kera</option>
+        <option value="burung">Burung</option>
+        <option value="kucing">Kucing</option>
+        <option value="kanguru">Kanguru</option>
+        <option value="zebra">Zebra</option>
+        <option value="meerkat">Meerkat</option>
+    </select>
+    <br>
+    <div class="container" id="container">
+        <div class="box" id="box">
+            <img id="image">
+        </div>
+    </div>
+</body>
+</html>
